@@ -24,29 +24,16 @@ body{
     background-size:400% 400%;
     animation:bgMove 10s ease infinite;
     color:white;
-    position:relative;
 }
 
-/* Background Animation */
-
+/* Background */
 @keyframes bgMove{
-
-    0%{
-        background-position:0% 50%;
-    }
-
-    50%{
-        background-position:100% 50%;
-    }
-
-    100%{
-        background-position:0% 50%;
-    }
-
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
 /* Loader */
-
 .loader{
     position:fixed;
     inset:0;
@@ -55,241 +42,114 @@ body{
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    z-index:99999;
+    z-index:9999;
     transition:1s;
 }
 
 .loader h1{
-    font-size:45px;
     animation:rgb 2s linear infinite;
 }
 
-.loader p{
-    margin-top:10px;
-    font-size:20px;
+@keyframes rgb{
+    0%{color:#ff4d4d;}
+    25%{color:#00ffcc;}
+    50%{color:#ffff66;}
+    75%{color:#66ff66;}
+    100%{color:#ff66ff;}
 }
 
-/* Main Container */
-
+/* Container */
 .container{
-    width:100%;
     max-width:750px;
     margin:auto;
-    padding:35px 15px 100px;
-    position:relative;
-    z-index:5;
+    padding:30px 15px 100px;
 }
-
-/* Premium Card */
 
 .card{
     background:rgba(255,255,255,0.12);
     backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,0.2);
-    border-radius:35px;
-    padding:30px;
+    border-radius:30px;
+    padding:25px;
     text-align:center;
-    box-shadow:
-    0 0 25px rgba(255,255,255,0.3),
-    0 0 50px rgba(255,0,255,0.2);
-}
-
-/* RGB */
-
-@keyframes rgb{
-
-    0%{
-        color:#ff4d4d;
-    }
-
-    25%{
-        color:#00ffcc;
-    }
-
-    50%{
-        color:#ffff66;
-    }
-
-    75%{
-        color:#66ff66;
-    }
-
-    100%{
-        color:#ff66ff;
-    }
-
 }
 
 /* Title */
-
 .title{
-    font-size:55px;
-    font-weight:700;
-    line-height:75px;
-    animation:rgb 3s linear infinite;
-    text-shadow:0 0 20px white;
+    font-size:45px;
+    font-weight:bold;
+    animation:rgb 3s infinite;
 }
 
 /* Photo */
-
-.photo-box{
-    margin-top:25px;
-}
-
 .photo{
-    width:240px;
-    height:240px;
-    border-radius:30px;
-    object-fit:cover;
-    border:5px solid white;
-
-    box-shadow:
-    0 0 20px white,
-    0 0 40px #ff00ff,
-    0 0 70px #00ffff;
-
-    animation:float 4s ease infinite;
+    width:200px;
+    height:200px;
+    border-radius:25px;
+    margin-top:20px;
+    border:4px solid white;
 }
 
-@keyframes float{
-
-    0%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-10px);
-    }
-
-    100%{
-        transform:translateY(0);
-    }
-
-}
-
-/* Caption */
-
+/* Caption typing */
 .caption{
-    margin-top:30px;
-    font-size:27px;
-    line-height:45px;
+    margin-top:25px;
+    font-size:22px;
     font-weight:bold;
-    animation:rgb 4s linear infinite;
+    min-height:40px;
 }
 
-/* Facebook Button */
+#typing::after{
+    content:"|";
+    animation:blink 0.7s infinite;
+}
 
+@keyframes blink{
+    50%{opacity:0;}
+}
+
+/* Button */
 .fb-btn{
     display:inline-block;
-    margin-top:25px;
-    padding:15px 35px;
-    border-radius:50px;
+    margin-top:20px;
+    padding:12px 25px;
     background:white;
     color:#1877f2;
+    border-radius:30px;
     text-decoration:none;
-    font-size:20px;
     font-weight:bold;
-    transition:0.4s;
-    box-shadow:0 0 20px white;
-}
-
-.fb-btn:hover{
-
-    transform:scale(1.08);
-
-    background:#1877f2;
-
-    color:white;
-
 }
 
 /* Video */
-
-.video-box{
-    margin-top:35px;
-}
-
 video{
     width:100%;
-    border-radius:25px;
-    border:4px solid white;
-    box-shadow:
-    0 0 20px white,
-    0 0 40px #ff00ff;
-    background:black;
+    margin-top:25px;
+    border-radius:20px;
 }
 
-/* Balloon */
-
+/* 🎈 BALLOON */
 .balloon{
     position:fixed;
-    bottom:-200px;
+    bottom:-120px;
     z-index:1;
-    animation:fly linear;
-    opacity:0.95;
+    opacity:0.9;
+    animation:fly linear forwards;
 }
 
+/* Realistic floating */
 @keyframes fly{
-
     0%{
-        transform:translateY(0) rotate(0deg);
-    }
-
-    100%{
-        transform:translateY(-140vh) rotate(360deg);
-    }
-
-}
-
-/* Firework */
-
-.firework{
-    position:fixed;
-    width:15px;
-    height:15px;
-    border-radius:50%;
-    z-index:2;
-    animation:boom 1.5s ease-out forwards;
-}
-
-@keyframes boom{
-
-    0%{
-        transform:scale(0);
-        opacity:1;
-    }
-
-    100%{
-        transform:scale(18);
+        transform:translateY(0) translateX(0) rotate(0deg);
         opacity:0;
     }
-
-}
-
-/* Responsive */
-
-@media(max-width:600px){
-
-.title{
-    font-size:38px;
-    line-height:60px;
-}
-
-.photo{
-    width:190px;
-    height:190px;
-}
-
-.caption{
-    font-size:20px;
-    line-height:34px;
-}
-
-.fb-btn{
-    font-size:17px;
-    padding:13px 28px;
-}
-
+    10%{
+        opacity:1;
+    }
+    50%{
+        transform:translateY(-60vh) translateX(var(--drift)) rotate(180deg);
+    }
+    100%{
+        transform:translateY(-120vh) translateX(calc(var(--drift) * 1.5)) rotate(360deg);
+        opacity:0;
+    }
 }
 
 </style>
@@ -298,173 +158,102 @@ video{
 <body>
 
 <!-- Loader -->
-
 <div class="loader" id="loader">
-
-<h1>🎉 শুভ জন্মদিন 🎂</h1>
-
-<p>লোড হচ্ছে...</p>
-
+<h1>🎉 Loading...</h1>
 </div>
-
-<!-- Main -->
 
 <div class="container">
 
 <div class="card">
 
-<div class="title">
-🎂 শুভ জন্মদিন 🎉
-</div>
-
-<div class="photo-box">
+<div class="title">🎂 শুভ জন্মদিন 🎉</div>
 
 <img src="osman.jpg" class="photo">
 
-</div>
-
 <div class="caption">
-
-💖 তোমার জীবনের প্রতিটি মুহূর্ত <br>
-
-সুখ, ভালোবাসা আর সফলতায় ভরে উঠুক ✨
-
+<span id="typing"></span>
 </div>
 
-<a href="https://www.facebook.com/share/18xQ1zkKxu/" target="_blank" class="fb-btn">
-
-📘 ফেসবুক প্রোফাইল দেখুন
-
+<a class="fb-btn" href="https://www.facebook.com/share/18xQ1zkKxu/" target="_blank">
+📘 Facebook Profile
 </a>
 
-<div class="video-box">
-
 <video controls autoplay>
-
 <source src="funny.mp4" type="video/mp4">
-
 </video>
 
 </div>
-
 </div>
-
-</div>
-
-<!-- Bomb Sound -->
-
-<audio id="boomSound">
-
-<source src="https://www.soundjay.com/explosion/explosion-01.mp3" type="audio/mpeg">
-
-</audio>
-
-<!-- Script -->
 
 <script>
 
 /* Loader */
-
 setTimeout(()=>{
+    document.getElementById("loader").style.display="none";
+},2000);
 
-document.getElementById("loader").style.opacity="0";
+/* Typing Caption (EDITABLE) */
+const texts = [
+"🎂 শুভ জন্মদিন",
+"💖 সুখে থাকো",
+"✨ সব শুভ হোক",
+"🎉 Happy Day",
+"💫 Always Smile",
+"💝 Stay Blessed"
+];
 
-setTimeout(()=>{
+let count = 0;
+let index = 0;
 
-document.getElementById("loader").style.display="none";
+function type(){
+    let current = texts[count];
+    let text = current.slice(0, ++index);
 
-},1000);
+    document.getElementById("typing").textContent = text;
 
-},3000);
+    if(text.length === current.length){
+        setTimeout(()=>{
+            index = 0;
+            count++;
+            if(count === texts.length) count = 0;
+            setTimeout(type, 500);
+        },1200);
+    }else{
+        setTimeout(type, 100);
+    }
+}
 
+type();
 
-/* Balloon Create */
-
+/* 🎈 REALISTIC BALLOON */
 function createBalloon(){
 
-    let balloon=document.createElement("img");
+    let balloon = document.createElement("img");
 
-    balloon.src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png";
+    balloon.src = "https://cdn-icons-png.flaticon.com/512/3468/3468371.png";
+    balloon.className = "balloon";
 
-    balloon.className="balloon";
+    let size = 40 + Math.random() * 50;
+    balloon.style.width = size + "px";
 
-    balloon.style.left=Math.random()*100+"vw";
+    let startX = Math.random() * window.innerWidth;
+    balloon.style.left = startX + "px";
 
-    balloon.style.width=(50+Math.random()*40)+"px";
+    let duration = 6 + Math.random() * 6;
+    balloon.style.animationDuration = duration + "s";
 
-    balloon.style.animationDuration=
-    (5+Math.random()*5)+"s";
+    let drift = (Math.random() * 100 - 50);
+    balloon.style.setProperty("--drift", drift + "px");
 
     document.body.appendChild(balloon);
 
     setTimeout(()=>{
-
         balloon.remove();
-
-    },10000);
-
+    }, duration * 1000);
 }
 
-/* Non Stop Balloons */
-
-setInterval(createBalloon,400);
-
-
-/* Firework Create */
-
-function createFirework(){
-
-    let fire=document.createElement("div");
-
-    fire.className="firework";
-
-    fire.style.top=Math.random()*80+"vh";
-
-    fire.style.left=Math.random()*100+"vw";
-
-    fire.style.background=
-    `hsl(${Math.random()*360},100%,60%)`;
-
-    document.body.appendChild(fire);
-
-    setTimeout(()=>{
-
-        fire.remove();
-
-    },1500);
-
-}
-
-/* Firework Loop */
-
-setInterval(createFirework,700);
-
-
-/* Sound Fix */
-
-let sound=document.getElementById("boomSound");
-
-/* Mobile Browser Allow */
-
-document.body.addEventListener("click",()=>{
-
-    sound.play();
-
-    sound.pause();
-
-    sound.currentTime=0;
-
-});
-
-/* Bomb Sound */
-
-setInterval(()=>{
-
-    sound.currentTime=0;
-
-    sound.play();
-
-},700);
+/* continuous balloons */
+setInterval(createBalloon, 400);
 
 </script>
 

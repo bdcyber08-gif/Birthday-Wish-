@@ -11,283 +11,176 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:'Hind Siliguri',sans-serif;
-    overflow-x:hidden;
-    min-height:100vh;
-    background:linear-gradient(-45deg,#ff0080,#7928ca,#00c6ff,#00ff99);
-    background-size:400% 400%;
-    animation:bgMove 10s ease infinite;
-    color:white;
-    position:relative;
+font-family:'Hind Siliguri',sans-serif;
+overflow-x:hidden;
+min-height:100vh;
+background:linear-gradient(-45deg,#ff0080,#7928ca,#00c6ff,#00ff99);
+background-size:400% 400%;
+animation:bgMove 10s ease infinite;
+color:white;
 }
-
-/* Background Animation */
 
 @keyframes bgMove{
-
-    0%{
-        background-position:0% 50%;
-    }
-
-    50%{
-        background-position:100% 50%;
-    }
-
-    100%{
-        background-position:0% 50%;
-    }
-
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
-
-/* Loader */
-
-.loader{
-    position:fixed;
-    inset:0;
-    background:black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    z-index:99999;
-    transition:1s;
-}
-
-.loader h1{
-    font-size:45px;
-    animation:rgb 2s linear infinite;
-}
-
-.loader p{
-    margin-top:10px;
-    font-size:20px;
-}
-
-/* RGB */
-
-@keyframes rgb{
-
-    0%{
-        color:#ff4d4d;
-    }
-
-    25%{
-        color:#00ffcc;
-    }
-
-    50%{
-        color:#ffff66;
-    }
-
-    75%{
-        color:#66ff66;
-    }
-
-    100%{
-        color:#ff66ff;
-    }
-
-}
-
-/* Main Container */
 
 .container{
-    width:100%;
-    max-width:750px;
-    margin:auto;
-    padding:35px 15px 100px;
-    position:relative;
-    z-index:5;
+max-width:750px;
+margin:auto;
+padding:30px 15px 100px;
+text-align:center;
+position:relative;
+z-index:5;
 }
-
-/* Premium Card */
 
 .card{
-    background:rgba(255,255,255,0.12);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,0.2);
-    border-radius:35px;
-    padding:30px;
-    text-align:center;
-    box-shadow:
-    0 0 25px rgba(255,255,255,0.3),
-    0 0 50px rgba(255,0,255,0.2);
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(15px);
+border-radius:35px;
+padding:30px;
+border:1px solid rgba(255,255,255,0.2);
+box-shadow:0 0 30px rgba(255,255,255,0.3);
 }
-
-/* Title */
 
 .title{
-    font-size:55px;
-    font-weight:700;
-    line-height:75px;
-    animation:rgb 3s linear infinite;
-    text-shadow:0 0 20px white;
+font-size:55px;
+font-weight:bold;
+animation:rgb 3s linear infinite;
 }
 
-/* Photo */
-
-.photo-box{
-    margin-top:25px;
+@keyframes rgb{
+0%{color:#ff4d4d;}
+25%{color:#00ffcc;}
+50%{color:#ffff66;}
+75%{color:#66ff66;}
+100%{color:#ff66ff;}
 }
 
 .photo{
-    width:240px;
-    height:240px;
-    border-radius:30px;
-    object-fit:cover;
-    border:5px solid white;
-
-    box-shadow:
-    0 0 20px white,
-    0 0 40px #ff00ff,
-    0 0 70px #00ffff;
-
-    animation:float 4s ease infinite;
+width:240px;
+height:240px;
+border-radius:30px;
+object-fit:cover;
+margin-top:25px;
+border:5px solid white;
+box-shadow:
+0 0 20px white,
+0 0 40px #ff00ff,
+0 0 70px #00ffff;
 }
-
-@keyframes float{
-
-    0%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-10px);
-    }
-
-    100%{
-        transform:translateY(0);
-    }
-
-}
-
-/* Caption */
 
 .caption{
-    margin-top:30px;
-    font-size:27px;
-    line-height:45px;
-    font-weight:bold;
-    animation:rgb 4s linear infinite;
+margin-top:25px;
+font-size:25px;
+font-weight:bold;
+line-height:42px;
+animation:rgb 4s linear infinite;
 }
 
-/* Facebook Button */
-
 .fb-btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:15px 35px;
-    border-radius:50px;
-    background:white;
-    color:#1877f2;
-    text-decoration:none;
-    font-size:20px;
-    font-weight:bold;
-    transition:0.4s;
-    box-shadow:0 0 20px white;
+display:inline-block;
+margin-top:25px;
+padding:15px 35px;
+border-radius:50px;
+background:white;
+color:#1877f2;
+font-size:20px;
+font-weight:bold;
+text-decoration:none;
+transition:0.4s;
 }
 
 .fb-btn:hover{
-
-    transform:scale(1.08);
-
-    background:#1877f2;
-
-    color:white;
-
+background:#1877f2;
+color:white;
+transform:scale(1.08);
 }
 
-/* Video */
-
-.video-box{
-    margin-top:35px;
+.start-btn{
+margin-top:30px;
+padding:18px 40px;
+border:none;
+border-radius:50px;
+font-size:22px;
+font-weight:bold;
+background:#ffcc00;
+color:black;
+cursor:pointer;
+box-shadow:0 0 25px #fff;
+animation:pulse 1s infinite;
 }
 
-video{
-    width:100%;
-    border-radius:25px;
-    border:4px solid white;
-    box-shadow:
-    0 0 20px white,
-    0 0 40px #ff00ff;
-    background:black;
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
 }
-
-/* Balloon */
 
 .balloon{
-    position:fixed;
-    bottom:-200px;
-    z-index:1;
-    animation:fly linear;
-    opacity:0.95;
+position:fixed;
+bottom:-200px;
+z-index:1;
+animation:fly linear;
 }
 
 @keyframes fly{
-
-    0%{
-        transform:translateY(0) rotate(0deg);
-    }
-
-    100%{
-        transform:translateY(-140vh) rotate(360deg);
-    }
-
+0%{
+transform:translateY(0) rotate(0deg);
+}
+100%{
+transform:translateY(-140vh) rotate(360deg);
+}
 }
 
-/* Firework */
-
 .firework{
-    position:fixed;
-    width:15px;
-    height:15px;
-    border-radius:50%;
-    z-index:2;
-    animation:boom 1.5s ease-out forwards;
+position:fixed;
+width:15px;
+height:15px;
+border-radius:50%;
+z-index:2;
+animation:boom 1.5s ease-out forwards;
 }
 
 @keyframes boom{
-
-    0%{
-        transform:scale(0);
-        opacity:1;
-    }
-
-    100%{
-        transform:scale(18);
-        opacity:0;
-    }
-
+0%{
+transform:scale(0);
+opacity:1;
+}
+100%{
+transform:scale(18);
+opacity:0;
+}
 }
 
-/* Responsive */
+video{
+width:100%;
+margin-top:35px;
+border-radius:25px;
+border:4px solid white;
+}
 
 @media(max-width:600px){
 
 .title{
-    font-size:38px;
-    line-height:60px;
+font-size:38px;
 }
 
 .photo{
-    width:190px;
-    height:190px;
+width:190px;
+height:190px;
 }
 
 .caption{
-    font-size:20px;
-    line-height:34px;
-}
-
-.fb-btn{
-    font-size:17px;
-    padding:13px 28px;
+font-size:20px;
+line-height:34px;
 }
 
 }
@@ -297,18 +190,6 @@ video{
 
 <body>
 
-<!-- Loader -->
-
-<div class="loader" id="loader">
-
-<h1>🎉 শুভ জন্মদিন 🎂</h1>
-
-<p>লোড হচ্ছে...</p>
-
-</div>
-
-<!-- Main -->
-
 <div class="container">
 
 <div class="card">
@@ -317,183 +198,126 @@ video{
 🎂 শুভ জন্মদিন 🎉
 </div>
 
-<div class="photo-box">
-
 <img src="osman.jpg" class="photo">
 
-</div>
-
 <div class="caption">
-
 💖 তোমার জীবনের প্রতিটি মুহূর্ত <br>
-
 সুখ, ভালোবাসা আর সফলতায় ভরে উঠুক ✨
-
 </div>
 
 <a href="https://www.facebook.com/share/18xQ1zkKxu/" target="_blank" class="fb-btn">
-
 📘 ফেসবুক প্রোফাইল দেখুন
-
 </a>
 
-<div class="video-box">
+<br>
+
+<button class="start-btn" onclick="startParty()">
+🎉 শুরু করুন
+</button>
 
 <video controls autoplay>
-
 <source src="funny.mp4" type="video/mp4">
-
 </video>
 
 </div>
 
 </div>
 
-</div>
-
-<!-- Bomb Sound -->
-
 <audio id="boomSound">
-
 <source src="https://www.soundjay.com/explosion/explosion-01.mp3" type="audio/mpeg">
-
 </audio>
-
-<!-- Script -->
 
 <script>
 
-/* =========================
-   LOADER
-========================= */
+function startParty(){
 
-setTimeout(()=>{
+let sound=document.getElementById("boomSound");
 
-document.getElementById("loader").style.opacity="0";
-
-setTimeout(()=>{
-
-document.getElementById("loader").style.display="none";
-
-},1000);
-
-},3000);
-
-
-/* =========================
-   BALLOON SYSTEM
-========================= */
+/* Balloon */
 
 function createBalloon(){
 
-    let balloon=document.createElement("img");
+let balloon=document.createElement("img");
 
-    balloon.src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png";
+balloon.src=
+"https://cdn-icons-png.flaticon.com/512/3468/3468371.png";
 
-    balloon.className="balloon";
+balloon.className="balloon";
 
-    balloon.style.left=Math.random()*100+"vw";
+balloon.style.left=Math.random()*100+"vw";
 
-    balloon.style.width=
-    (50+Math.random()*40)+"px";
+balloon.style.width=
+(50+Math.random()*40)+"px";
 
-    balloon.style.animationDuration=
-    (5+Math.random()*5)+"s";
+balloon.style.animationDuration=
+(5+Math.random()*5)+"s";
 
-    document.body.appendChild(balloon);
+document.body.appendChild(balloon);
 
-    setTimeout(()=>{
-
-        balloon.remove();
-
-    },10000);
+setTimeout(()=>{
+balloon.remove();
+},10000);
 
 }
 
-/* Balloon Start */
-
-let balloonInterval =
-setInterval(createBalloon,400);
+let balloonInterval=
+setInterval(createBalloon,300);
 
 
-/* =========================
-   FIREWORK SYSTEM
-========================= */
+/* Firework */
 
 function createFirework(){
 
-    let fire=document.createElement("div");
+let fire=document.createElement("div");
 
-    fire.className="firework";
+fire.className="firework";
 
-    fire.style.top=Math.random()*80+"vh";
+fire.style.top=Math.random()*80+"vh";
 
-    fire.style.left=Math.random()*100+"vw";
+fire.style.left=Math.random()*100+"vw";
 
-    fire.style.background=
-    `hsl(${Math.random()*360},100%,60%)`;
+fire.style.background=
+`hsl(${Math.random()*360},100%,60%)`;
 
-    document.body.appendChild(fire);
+document.body.appendChild(fire);
 
-    setTimeout(()=>{
-
-        fire.remove();
-
-    },1500);
+setTimeout(()=>{
+fire.remove();
+},1500);
 
 }
 
-/* Firework Start */
-
-let fireworkInterval =
-setInterval(createFirework,700);
+let fireInterval=
+setInterval(createFirework,500);
 
 
-/* =========================
-   SOUND SYSTEM
-========================= */
+/* Sound */
 
-let sound =
-document.getElementById("boomSound");
+let soundInterval=
+setInterval(()=>{
 
-/* Mobile Browser Fix */
+sound.currentTime=0;
 
-document.body.addEventListener("click",()=>{
+sound.play();
 
-    sound.play();
-
-    sound.pause();
-
-    sound.currentTime=0;
-
-});
-
-/* Sound Start */
-
-let soundInterval = setInterval(()=>{
-
-    sound.currentTime=0;
-
-    sound.play();
-
-},700);
+},500);
 
 
-/* =========================
-   STOP AFTER 3 SECONDS
-========================= */
+/* Stop After 3 Seconds */
 
 setTimeout(()=>{
 
-    clearInterval(balloonInterval);
+clearInterval(balloonInterval);
 
-    clearInterval(fireworkInterval);
+clearInterval(fireInterval);
 
-    clearInterval(soundInterval);
+clearInterval(soundInterval);
 
-    sound.pause();
+sound.pause();
 
 },3000);
+
+}
 
 </script>
 

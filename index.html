@@ -10,111 +10,78 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
+margin:0;
 font-family:'Hind Siliguri',sans-serif;
-overflow-x:hidden;
 min-height:100vh;
-background:linear-gradient(-45deg,#ff0080,#7928ca,#00c6ff,#00ff99);
+overflow-x:hidden;
+background: radial-gradient(circle,#ff00cc,#3333ff,#00ffcc);
 background-size:400% 400%;
-animation:bgMove 10s ease infinite;
+animation:bg 10s ease infinite;
 color:white;
+text-align:center;
 }
 
-@keyframes bgMove{
+@keyframes bg{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
 }
 
 .container{
-max-width:750px;
+padding:40px 15px;
+max-width:800px;
 margin:auto;
-padding:30px 15px 100px;
-text-align:center;
-position:relative;
-z-index:5;
 }
 
 .card{
 background:rgba(255,255,255,0.12);
-backdrop-filter:blur(15px);
-border-radius:35px;
+backdrop-filter:blur(18px);
+border-radius:30px;
 padding:30px;
 border:1px solid rgba(255,255,255,0.2);
-box-shadow:0 0 30px rgba(255,255,255,0.3);
+box-shadow:0 0 40px rgba(255,255,255,0.3);
 }
 
-.title{
-font-size:55px;
-font-weight:bold;
-animation:rgb 3s linear infinite;
+h1{
+font-size:45px;
+animation:color 3s infinite;
 }
 
-@keyframes rgb{
+@keyframes color{
 0%{color:#ff4d4d;}
-25%{color:#00ffcc;}
-50%{color:#ffff66;}
-75%{color:#66ff66;}
-100%{color:#ff66ff;}
+25%{color:#00ffff;}
+50%{color:#ffff00;}
+75%{color:#00ff66;}
+100%{color:#ff00ff;}
 }
 
 .photo{
-width:240px;
-height:240px;
-border-radius:30px;
+width:220px;
+height:220px;
+border-radius:25px;
 object-fit:cover;
-margin-top:25px;
 border:5px solid white;
-box-shadow:
-0 0 20px white,
-0 0 40px #ff00ff,
-0 0 70px #00ffff;
+box-shadow:0 0 25px #fff,0 0 60px #ff00ff;
+margin-top:20px;
 }
 
-.caption{
-margin-top:25px;
-font-size:25px;
-font-weight:bold;
-line-height:42px;
-animation:rgb 4s linear infinite;
+.text{
+font-size:22px;
+margin-top:20px;
+line-height:38px;
 }
 
-.fb-btn{
-display:inline-block;
+.btn{
 margin-top:25px;
 padding:15px 35px;
-border-radius:50px;
-background:white;
-color:#1877f2;
-font-size:20px;
-font-weight:bold;
-text-decoration:none;
-transition:0.4s;
-}
-
-.fb-btn:hover{
-background:#1877f2;
-color:white;
-transform:scale(1.08);
-}
-
-.start-btn{
-margin-top:30px;
-padding:18px 40px;
 border:none;
 border-radius:50px;
-font-size:22px;
-font-weight:bold;
-background:#ffcc00;
-color:black;
+font-size:20px;
 cursor:pointer;
-box-shadow:0 0 25px #fff;
+background:gold;
+font-weight:bold;
+box-shadow:0 0 20px white;
 animation:pulse 1s infinite;
 }
 
@@ -124,65 +91,33 @@ animation:pulse 1s infinite;
 100%{transform:scale(1);}
 }
 
+/* Balloons */
 .balloon{
 position:fixed;
-bottom:-200px;
-z-index:1;
+bottom:-150px;
 animation:fly linear;
+z-index:1;
 }
 
 @keyframes fly{
-0%{
-transform:translateY(0) rotate(0deg);
-}
-100%{
-transform:translateY(-140vh) rotate(360deg);
+to{
+transform:translateY(-120vh) rotate(360deg);
 }
 }
 
+/* Firework */
 .firework{
 position:fixed;
-width:15px;
-height:15px;
+width:12px;
+height:12px;
 border-radius:50%;
+animation:boom 1.2s ease-out forwards;
 z-index:2;
-animation:boom 1.5s ease-out forwards;
 }
 
 @keyframes boom{
-0%{
-transform:scale(0);
-opacity:1;
-}
-100%{
-transform:scale(18);
-opacity:0;
-}
-}
-
-video{
-width:100%;
-margin-top:35px;
-border-radius:25px;
-border:4px solid white;
-}
-
-@media(max-width:600px){
-
-.title{
-font-size:38px;
-}
-
-.photo{
-width:190px;
-height:190px;
-}
-
-.caption{
-font-size:20px;
-line-height:34px;
-}
-
+0%{transform:scale(0);opacity:1;}
+100%{transform:scale(20);opacity:0;}
 }
 
 </style>
@@ -191,131 +126,90 @@ line-height:34px;
 <body>
 
 <div class="container">
-
 <div class="card">
 
-<div class="title">
-🎂 শুভ জন্মদিন 🎉
-</div>
+<h1>🎂 শুভ জন্মদিন 🎉</h1>
 
 <img src="osman.jpg" class="photo">
 
-<div class="caption">
-💖 তোমার জীবনের প্রতিটি মুহূর্ত <br>
-সুখ, ভালোবাসা আর সফলতায় ভরে উঠুক ✨
+<div class="text">
+💖 তোমার জীবন হোক সুখ, ভালোবাসা আর সফলতায় ভরা ✨
 </div>
 
-<a href="https://www.facebook.com/share/18xQ1zkKxu/" target="_blank" class="fb-btn">
-📘 ফেসবুক প্রোফাইল দেখুন
-</a>
-
-<br>
-
-<button class="start-btn" onclick="startParty()">
+<button class="btn" onclick="startParty()">
 🎉 শুরু করুন
 </button>
 
-<video controls autoplay>
-<source src="funny.mp4" type="video/mp4">
-</video>
-
+</div>
 </div>
 
-</div>
-
-<audio id="boomSound">
-<source src="https://www.soundjay.com/explosion/explosion-01.mp3" type="audio/mpeg">
+<!-- SOUND -->
+<audio id="boomSound" preload="auto">
+<source src="https://www.soundjay.com/explosion/explosion-01.mp3">
 </audio>
 
 <script>
 
-function startParty(){
-
-let sound=document.getElementById("boomSound");
-
-/* Balloon */
-
-function createBalloon(){
-
-let balloon=document.createElement("img");
-
-balloon.src=
-"https://cdn-icons-png.flaticon.com/512/3468/3468371.png";
-
-balloon.className="balloon";
-
-balloon.style.left=Math.random()*100+"vw";
-
-balloon.style.width=
-(50+Math.random()*40)+"px";
-
-balloon.style.animationDuration=
-(5+Math.random()*5)+"s";
-
-document.body.appendChild(balloon);
-
-setTimeout(()=>{
-balloon.remove();
-},10000);
-
-}
-
-let balloonInterval=
-setInterval(createBalloon,300);
-
-
-/* Firework */
-
+/* 🎆 FIREWORK + SOUND SYNC */
 function createFirework(){
 
-let fire=document.createElement("div");
+let sound = document.getElementById("boomSound");
 
-fire.className="firework";
+/* position */
+let x = Math.random() * 100;
+let y = Math.random() * 80;
 
-fire.style.top=Math.random()*80+"vh";
-
-fire.style.left=Math.random()*100+"vw";
-
-fire.style.background=
-`hsl(${Math.random()*360},100%,60%)`;
+/* firework */
+let fire = document.createElement("div");
+fire.className = "firework";
+fire.style.left = x + "vw";
+fire.style.top = y + "vh";
+fire.style.background = `hsl(${Math.random()*360},100%,60%)`;
 
 document.body.appendChild(fire);
 
+/* 🔊 PERFECT SYNC SOUND */
+let audioClone = sound.cloneNode();
+audioClone.volume = 0.8;
+audioClone.play();
+
+/* remove */
 setTimeout(()=>{
 fire.remove();
-},1500);
+audioClone.remove();
+},1200);
 
 }
 
-let fireInterval=
-setInterval(createFirework,500);
+/* 🎉 FULL PARTY SYSTEM */
+function startParty(){
 
+/* balloons */
+let balloonInterval = setInterval(()=>{
 
-/* Sound */
+let b = document.createElement("img");
+b.src = "https://cdn-icons-png.flaticon.com/512/3468/3468371.png";
+b.className = "balloon";
+b.style.left = Math.random()*100 + "vw";
+b.style.width = (40 + Math.random()*50) + "px";
+b.style.animationDuration = (4 + Math.random()*5) + "s";
 
-let soundInterval=
-setInterval(()=>{
+document.body.appendChild(b);
 
-sound.currentTime=0;
+setTimeout(()=>b.remove(),9000);
 
-sound.play();
+},250);
 
-},500);
+/* fireworks */
+let fireInterval = setInterval(()=>{
+createFirework();
+}, 250 + Math.random()*300);
 
-
-/* Stop After 3 Seconds */
-
+/* stop after 4 sec */
 setTimeout(()=>{
-
 clearInterval(balloonInterval);
-
 clearInterval(fireInterval);
-
-clearInterval(soundInterval);
-
-sound.pause();
-
-},3000);
+},4000);
 
 }
 

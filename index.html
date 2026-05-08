@@ -22,7 +22,7 @@ body{
     min-height:100vh;
     background:linear-gradient(-45deg,#ff0080,#7928ca,#00c6ff,#00ff99);
     background-size:400% 400%;
-    animation:bgMove 12s ease infinite;
+    animation:bgMove 10s ease infinite;
     color:white;
     position:relative;
 }
@@ -30,9 +30,69 @@ body{
 /* Background Animation */
 
 @keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* Loader */
+
+.loader{
+    position:fixed;
+    inset:0;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:99999;
+    transition:1s;
+}
+
+.loader h1{
+    font-size:45px;
+    animation:rgb 2s linear infinite;
+}
+
+.loader p{
+    margin-top:10px;
+    font-size:20px;
+}
+
+/* RGB */
+
+@keyframes rgb{
+
+    0%{
+        color:#ff4d4d;
+    }
+
+    25%{
+        color:#00ffcc;
+    }
+
+    50%{
+        color:#ffff66;
+    }
+
+    75%{
+        color:#66ff66;
+    }
+
+    100%{
+        color:#ff66ff;
+    }
+
 }
 
 /* Main Container */
@@ -41,12 +101,12 @@ body{
     width:100%;
     max-width:750px;
     margin:auto;
-    padding:40px 15px 100px;
+    padding:35px 15px 100px;
     position:relative;
     z-index:5;
 }
 
-/* Premium Glass Card */
+/* Premium Card */
 
 .card{
     background:rgba(255,255,255,0.12);
@@ -60,49 +120,51 @@ body{
     0 0 50px rgba(255,0,255,0.2);
 }
 
-/* RGB Title */
+/* Title */
 
 .title{
     font-size:55px;
-    line-height:75px;
     font-weight:700;
+    line-height:75px;
     animation:rgb 3s linear infinite;
     text-shadow:0 0 20px white;
-}
-
-@keyframes rgb{
-    0%{color:#ff4d4d;}
-    25%{color:#00ffcc;}
-    50%{color:#ffff66;}
-    75%{color:#66ff66;}
-    100%{color:#ff66ff;}
 }
 
 /* Photo */
 
 .photo-box{
     margin-top:25px;
-    position:relative;
-    display:inline-block;
 }
 
 .photo{
     width:240px;
     height:240px;
-    object-fit:cover;
     border-radius:30px;
+    object-fit:cover;
     border:5px solid white;
+
     box-shadow:
     0 0 20px white,
     0 0 40px #ff00ff,
     0 0 70px #00ffff;
-    animation:float 4s ease-in-out infinite;
+
+    animation:float 4s ease infinite;
 }
 
 @keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-    100%{transform:translateY(0);}
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
 }
 
 /* Caption */
@@ -122,19 +184,23 @@ body{
     margin-top:25px;
     padding:15px 35px;
     border-radius:50px;
+    background:white;
+    color:#1877f2;
     text-decoration:none;
     font-size:20px;
     font-weight:bold;
-    background:white;
-    color:#1877f2;
     transition:0.4s;
     box-shadow:0 0 20px white;
 }
 
 .fb-btn:hover{
+
     transform:scale(1.08);
+
     background:#1877f2;
+
     color:white;
+
 }
 
 /* Video */
@@ -153,17 +219,18 @@ video{
     background:black;
 }
 
-/* Balloons */
+/* Balloon */
 
 .balloon{
     position:fixed;
     bottom:-200px;
     z-index:1;
-    animation:fly linear forwards;
+    animation:fly linear;
     opacity:0.95;
 }
 
 @keyframes fly{
+
     0%{
         transform:translateY(0) rotate(0deg);
     }
@@ -171,6 +238,7 @@ video{
     100%{
         transform:translateY(-140vh) rotate(360deg);
     }
+
 }
 
 /* Firework */
@@ -198,36 +266,12 @@ video{
 
 }
 
-/* Loading Screen */
-
-.loader{
-    position:fixed;
-    inset:0;
-    background:black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    z-index:9999;
-    transition:1s;
-}
-
-.loader h1{
-    font-size:45px;
-    animation:rgb 2s linear infinite;
-}
-
-.loader p{
-    margin-top:10px;
-    font-size:20px;
-}
-
 /* Responsive */
 
 @media(max-width:600px){
 
 .title{
-    font-size:40px;
+    font-size:38px;
     line-height:60px;
 }
 
@@ -237,12 +281,13 @@ video{
 }
 
 .caption{
-    font-size:21px;
-    line-height:35px;
+    font-size:20px;
+    line-height:34px;
 }
 
 .fb-btn{
     font-size:17px;
+    padding:13px 28px;
 }
 
 }
@@ -252,18 +297,15 @@ video{
 
 <body>
 
-<!-- Loading Screen -->
+<!-- Loader -->
 
 <div class="loader" id="loader">
+
 <h1>🎉 শুভ জন্মদিন 🎂</h1>
+
 <p>লোড হচ্ছে...</p>
+
 </div>
-
-<!-- Bomb Sound -->
-
-<audio id="boomSound">
-<source src="https://www.soundjay.com/explosion/explosion-01.mp3" type="audio/mpeg">
-</audio>
 
 <!-- Main -->
 
@@ -276,47 +318,73 @@ video{
 </div>
 
 <div class="photo-box">
+
 <img src="osman.jpg" class="photo">
+
 </div>
 
 <div class="caption">
+
 💖 তোমার জীবনের প্রতিটি মুহূর্ত <br>
+
 সুখ, ভালোবাসা আর সফলতায় ভরে উঠুক ✨
+
 </div>
 
 <a href="https://www.facebook.com/share/18xQ1zkKxu/" target="_blank" class="fb-btn">
+
 📘 ফেসবুক প্রোফাইল দেখুন
+
 </a>
 
 <div class="video-box">
+
 <video controls autoplay>
+
 <source src="funny.mp4" type="video/mp4">
+
 </video>
-</div>
 
 </div>
 
 </div>
+
+</div>
+
+<!-- Bomb Sound -->
+
+<audio id="boomSound">
+
+<source src="https://www.soundjay.com/explosion/explosion-01.mp3" type="audio/mpeg">
+
+</audio>
 
 <!-- Script -->
 
 <script>
 
-/* Loader */
+/* =========================
+   LOADER
+========================= */
 
 setTimeout(()=>{
 
 document.getElementById("loader").style.opacity="0";
 
 setTimeout(()=>{
+
 document.getElementById("loader").style.display="none";
+
 },1000);
 
 },3000);
 
-/* Balloons */
 
-for(let i=0;i<40;i++){
+/* =========================
+   BALLOON SYSTEM
+========================= */
+
+function createBalloon(){
 
     let balloon=document.createElement("img");
 
@@ -326,19 +394,31 @@ for(let i=0;i<40;i++){
 
     balloon.style.left=Math.random()*100+"vw";
 
-    balloon.style.width=(50+Math.random()*40)+"px";
+    balloon.style.width=
+    (50+Math.random()*40)+"px";
 
     balloon.style.animationDuration=
     (5+Math.random()*5)+"s";
 
-    balloon.style.animationDelay=
-    Math.random()*3+"s";
-
     document.body.appendChild(balloon);
+
+    setTimeout(()=>{
+
+        balloon.remove();
+
+    },10000);
 
 }
 
-/* Fireworks */
+/* Balloon Start */
+
+let balloonInterval =
+setInterval(createBalloon,400);
+
+
+/* =========================
+   FIREWORK SYSTEM
+========================= */
 
 function createFirework(){
 
@@ -356,26 +436,64 @@ function createFirework(){
     document.body.appendChild(fire);
 
     setTimeout(()=>{
+
         fire.remove();
+
     },1500);
 
 }
 
-/* Bomb Sound */
+/* Firework Start */
 
-let sound=document.getElementById("boomSound");
+let fireworkInterval =
+setInterval(createFirework,700);
 
-/* Start Fireworks */
 
-setInterval(()=>{
+/* =========================
+   SOUND SYSTEM
+========================= */
 
-    createFirework();
+let sound =
+document.getElementById("boomSound");
+
+/* Mobile Browser Fix */
+
+document.body.addEventListener("click",()=>{
+
+    sound.play();
+
+    sound.pause();
+
+    sound.currentTime=0;
+
+});
+
+/* Sound Start */
+
+let soundInterval = setInterval(()=>{
 
     sound.currentTime=0;
 
     sound.play();
 
 },700);
+
+
+/* =========================
+   STOP AFTER 3 SECONDS
+========================= */
+
+setTimeout(()=>{
+
+    clearInterval(balloonInterval);
+
+    clearInterval(fireworkInterval);
+
+    clearInterval(soundInterval);
+
+    sound.pause();
+
+},3000);
 
 </script>
 

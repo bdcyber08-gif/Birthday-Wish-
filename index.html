@@ -7,115 +7,139 @@
 
 <style>
 
-body{
+*{
     margin:0;
-    overflow-x:hidden;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
     font-family:Arial;
+    background:linear-gradient(135deg,#ff0080,#7928ca,#00c6ff);
+    background-size:400% 400%;
+    animation:bgMove 10s infinite alternate;
     text-align:center;
-    background:linear-gradient(135deg,#ff4e8d,#6a5cff);
     color:white;
 }
 
-/* Balloon Animation */
-
-.balloon{
-    position:fixed;
-    bottom:-150px;
-    width:80px;
-    animation:floatUp 10s linear infinite;
-    z-index:1;
+@keyframes bgMove{
+    0%{background-position:left;}
+    100%{background-position:right;}
 }
 
-.balloon:nth-child(1){
-    left:10%;
-    animation-duration:8s;
+/* RGB Text */
+
+.rgb{
+    animation:rgb 2s infinite linear;
+    text-shadow:0 0 15px white;
 }
 
-.balloon:nth-child(2){
-    left:30%;
-    animation-duration:10s;
+@keyframes rgb{
+    0%{color:#ff0000;}
+    25%{color:#00ff00;}
+    50%{color:#00ffff;}
+    75%{color:#ffff00;}
+    100%{color:#ff00ff;}
 }
 
-.balloon:nth-child(3){
-    left:50%;
-    animation-duration:7s;
-}
-
-.balloon:nth-child(4){
-    left:70%;
-    animation-duration:9s;
-}
-
-.balloon:nth-child(5){
-    left:90%;
-    animation-duration:11s;
-}
-
-@keyframes floatUp{
-    0%{
-        transform:translateY(0);
-        opacity:1;
-    }
-
-    100%{
-        transform:translateY(-120vh);
-        opacity:0;
-    }
-}
+/* Main Box */
 
 .container{
     position:relative;
     z-index:2;
-    padding:20px;
+    padding-top:40px;
 }
 
-h1{
-    margin-top:20px;
-    font-size:50px;
-    animation:glow 2s infinite alternate;
+/* Birthday Title */
+
+.title{
+    font-size:55px;
+    font-weight:bold;
+    line-height:80px;
 }
 
-@keyframes glow{
-    from{
-        text-shadow:0 0 10px white;
-    }
-
-    to{
-        text-shadow:0 0 30px yellow;
-    }
-}
+/* Photo */
 
 .photo{
-    width:260px;
-    height:260px;
+    width:210px;
+    height:210px;
     object-fit:cover;
-    border-radius:25px;
+    border-radius:30px;
     border:5px solid white;
-    margin-top:20px;
-    box-shadow:0 0 25px black;
+    margin-top:25px;
+    box-shadow:
+    0 0 20px #fff,
+    0 0 40px #ff00ff,
+    0 0 60px #00ffff;
 }
 
+/* Caption */
+
 .caption{
-    font-size:24px;
-    margin-top:20px;
-    padding:10px;
+    margin-top:25px;
+    font-size:28px;
+    padding:15px;
+    line-height:45px;
+    font-weight:bold;
 }
 
 /* Video */
 
 video{
     width:90%;
-    max-width:600px;
-    margin-top:25px;
-    border-radius:20px;
-    box-shadow:0 0 25px black;
+    max-width:550px;
+    margin-top:20px;
+    border-radius:25px;
+    border:4px solid white;
+    box-shadow:
+    0 0 20px white,
+    0 0 40px #ff00ff;
     background:black;
 }
 
-.footer{
-    margin-top:30px;
-    font-size:20px;
-    padding-bottom:40px;
+/* Balloons */
+
+.balloon{
+    position:absolute;
+    bottom:-200px;
+    width:70px;
+    animation:fly linear forwards;
+}
+
+@keyframes fly{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-130vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Firework Bomb */
+
+.firework{
+    position:absolute;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:white;
+    animation:boom 1.5s infinite;
+}
+
+@keyframes boom{
+    0%{
+        transform:scale(0);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(15);
+        opacity:0;
+    }
 }
 
 </style>
@@ -123,21 +147,50 @@ video{
 
 <body>
 
+<!-- Fireworks -->
+
+<div class="firework" style="top:15%; left:20%;"></div>
+<div class="firework" style="top:20%; left:70%;"></div>
+<div class="firework" style="top:60%; left:50%;"></div>
+
 <!-- Balloons -->
 
-<img src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png" class="balloon">
-<img src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png" class="balloon">
-<img src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png" class="balloon">
-<img src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png" class="balloon">
-<img src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png" class="balloon">
+<script>
+
+for(let i=0;i<25;i++){
+
+    let balloon=document.createElement("img");
+
+    balloon.src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png";
+
+    balloon.className="balloon";
+
+    balloon.style.left=Math.random()*100+"vw";
+
+    balloon.style.animationDuration=
+    (5+Math.random()*5)+"s";
+
+    balloon.style.width=
+    (50+Math.random()*40)+"px";
+
+    document.body.appendChild(balloon);
+}
+
+</script>
 
 <div class="container">
 
-<h1>🎉 Happy Birthday 🎂</h1>
+<div class="title rgb">
+🎉 Happy <br> Birthday 🎂
+</div>
 
-<img src="friend.jpg" class="photo">
+<!-- Friend Photo -->
 
-<div class="caption">
+<img src="Osman.jpg" class="photo">
+
+<!-- Caption -->
+
+<div class="caption rgb">
 💖 Happy Birthday My Best Friend 🎈 <br>
 May your life be full of happiness and success ✨
 </div>
@@ -145,14 +198,10 @@ May your life be full of happiness and success ✨
 <!-- Video -->
 
 <video controls autoplay>
-    <source src="birthday.mp4" type="video/mp4">
+<source src="funny.mp4" type="video/mp4">
 </video>
-
-<div class="footer">
-Made With ❤️ By Your Best Friend
-</div>
 
 </div>
 
 </body>
-  </html>
+</html>

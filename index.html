@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>শুভ জন্মদিন 🎂</title>
+<title>🎂 শুভ জন্মদিন 🎉</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&display=swap" rel="stylesheet">
 
@@ -18,45 +18,56 @@
 
 body{
     font-family:'Hind Siliguri',sans-serif;
-    min-height:100vh;
     overflow-x:hidden;
+    min-height:100vh;
     background:linear-gradient(-45deg,#ff0080,#7928ca,#00c6ff,#00ff99);
     background-size:400% 400%;
-    animation:bg 10s ease infinite;
+    animation:bgMove 12s ease infinite;
     color:white;
+    position:relative;
 }
 
-@keyframes bg{
+/* Background Animation */
+
+@keyframes bgMove{
     0%{background-position:0% 50%;}
     50%{background-position:100% 50%;}
     100%{background-position:0% 50%;}
 }
 
-/* Main Box */
+/* Main Container */
 
 .container{
     width:100%;
-    max-width:700px;
+    max-width:750px;
     margin:auto;
-    padding:30px 15px 80px;
+    padding:40px 15px 100px;
     position:relative;
     z-index:5;
 }
 
+/* Premium Glass Card */
+
 .card{
     background:rgba(255,255,255,0.12);
-    backdrop-filter:blur(12px);
-    border-radius:30px;
-    padding:25px;
-    text-align:center;
+    backdrop-filter:blur(15px);
     border:1px solid rgba(255,255,255,0.2);
-    box-shadow:0 0 30px rgba(255,255,255,0.2);
+    border-radius:35px;
+    padding:30px;
+    text-align:center;
+    box-shadow:
+    0 0 25px rgba(255,255,255,0.3),
+    0 0 50px rgba(255,0,255,0.2);
 }
 
-/* RGB Text */
+/* RGB Title */
 
-.rgb{
+.title{
+    font-size:55px;
+    line-height:75px;
+    font-weight:700;
     animation:rgb 3s linear infinite;
+    text-shadow:0 0 20px white;
 }
 
 @keyframes rgb{
@@ -65,15 +76,6 @@ body{
     50%{color:#ffff66;}
     75%{color:#66ff66;}
     100%{color:#ff66ff;}
-}
-
-/* Title */
-
-.title{
-    font-size:52px;
-    font-weight:700;
-    line-height:75px;
-    text-shadow:0 0 20px white;
 }
 
 /* Photo */
@@ -85,24 +87,32 @@ body{
 }
 
 .photo{
-    width:230px;
-    height:230px;
+    width:240px;
+    height:240px;
     object-fit:cover;
-    border-radius:25px;
+    border-radius:30px;
     border:5px solid white;
     box-shadow:
     0 0 20px white,
     0 0 40px #ff00ff,
     0 0 70px #00ffff;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
 }
 
 /* Caption */
 
 .caption{
-    margin-top:25px;
-    font-size:25px;
-    line-height:42px;
+    margin-top:30px;
+    font-size:27px;
+    line-height:45px;
     font-weight:bold;
+    animation:rgb 4s linear infinite;
 }
 
 /* Facebook Button */
@@ -112,11 +122,11 @@ body{
     margin-top:25px;
     padding:15px 35px;
     border-radius:50px;
-    background:white;
-    color:#1877f2;
+    text-decoration:none;
     font-size:20px;
     font-weight:bold;
-    text-decoration:none;
+    background:white;
+    color:#1877f2;
     transition:0.4s;
     box-shadow:0 0 20px white;
 }
@@ -130,24 +140,27 @@ body{
 /* Video */
 
 .video-box{
-    margin-top:30px;
+    margin-top:35px;
 }
 
 video{
     width:100%;
-    border-radius:20px;
+    border-radius:25px;
     border:4px solid white;
-    box-shadow:0 0 25px rgba(255,255,255,0.7);
+    box-shadow:
+    0 0 20px white,
+    0 0 40px #ff00ff;
+    background:black;
 }
 
-/* Balloon */
+/* Balloons */
 
 .balloon{
     position:fixed;
-    bottom:-150px;
+    bottom:-200px;
     z-index:1;
-    animation:fly linear infinite;
-    opacity:0.9;
+    animation:fly linear forwards;
+    opacity:0.95;
 }
 
 @keyframes fly{
@@ -156,7 +169,7 @@ video{
     }
 
     100%{
-        transform:translateY(-130vh) rotate(360deg);
+        transform:translateY(-140vh) rotate(360deg);
     }
 }
 
@@ -164,26 +177,15 @@ video{
 
 .firework{
     position:fixed;
-    width:12px;
-    height:12px;
+    width:15px;
+    height:15px;
     border-radius:50%;
-    z-index:0;
-    animation:boom 2s infinite;
-}
-
-.firework:nth-child(1){
-    background:#ffff00;
-}
-
-.firework:nth-child(2){
-    background:#00ffff;
-}
-
-.firework:nth-child(3){
-    background:#ff00ff;
+    z-index:2;
+    animation:boom 1.5s ease-out forwards;
 }
 
 @keyframes boom{
+
     0%{
         transform:scale(0);
         opacity:1;
@@ -193,6 +195,31 @@ video{
         transform:scale(18);
         opacity:0;
     }
+
+}
+
+/* Loading Screen */
+
+.loader{
+    position:fixed;
+    inset:0;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:9999;
+    transition:1s;
+}
+
+.loader h1{
+    font-size:45px;
+    animation:rgb 2s linear infinite;
+}
+
+.loader p{
+    margin-top:10px;
+    font-size:20px;
 }
 
 /* Responsive */
@@ -200,23 +227,22 @@ video{
 @media(max-width:600px){
 
 .title{
-    font-size:38px;
+    font-size:40px;
     line-height:60px;
 }
 
 .photo{
-    width:180px;
-    height:180px;
+    width:190px;
+    height:190px;
 }
 
 .caption{
-    font-size:20px;
-    line-height:34px;
+    font-size:21px;
+    line-height:35px;
 }
 
 .fb-btn{
-    font-size:18px;
-    padding:13px 28px;
+    font-size:17px;
 }
 
 }
@@ -226,38 +252,18 @@ video{
 
 <body>
 
-<!-- Fireworks -->
+<!-- Loading Screen -->
 
-<div class="firework" style="top:15%; left:20%;"></div>
-<div class="firework" style="top:25%; left:75%;"></div>
-<div class="firework" style="top:60%; left:50%;"></div>
+<div class="loader" id="loader">
+<h1>🎉 শুভ জন্মদিন 🎂</h1>
+<p>লোড হচ্ছে...</p>
+</div>
 
-<!-- Balloon Script -->
+<!-- Bomb Sound -->
 
-<script>
-
-for(let i=0;i<30;i++){
-
-    let balloon=document.createElement("img");
-
-    balloon.src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png";
-
-    balloon.className="balloon";
-
-    balloon.style.left=Math.random()*100+"vw";
-
-    balloon.style.width=(50+Math.random()*40)+"px";
-
-    balloon.style.animationDuration=
-    (6+Math.random()*6)+"s";
-
-    balloon.style.animationDelay=
-    Math.random()*5+"s";
-
-    document.body.appendChild(balloon);
-}
-
-</script>
+<audio id="boomSound">
+<source src="https://www.soundjay.com/explosion/explosion-01.mp3" type="audio/mpeg">
+</audio>
 
 <!-- Main -->
 
@@ -265,7 +271,7 @@ for(let i=0;i<30;i++){
 
 <div class="card">
 
-<div class="title rgb">
+<div class="title">
 🎂 শুভ জন্মদিন 🎉
 </div>
 
@@ -273,8 +279,8 @@ for(let i=0;i<30;i++){
 <img src="osman.jpg" class="photo">
 </div>
 
-<div class="caption rgb">
-💖 তোমার জীবনের প্রতিটি দিন <br>
+<div class="caption">
+💖 তোমার জীবনের প্রতিটি মুহূর্ত <br>
 সুখ, ভালোবাসা আর সফলতায় ভরে উঠুক ✨
 </div>
 
@@ -291,6 +297,87 @@ for(let i=0;i<30;i++){
 </div>
 
 </div>
+
+<!-- Script -->
+
+<script>
+
+/* Loader */
+
+setTimeout(()=>{
+
+document.getElementById("loader").style.opacity="0";
+
+setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+},1000);
+
+},3000);
+
+/* Balloons */
+
+for(let i=0;i<40;i++){
+
+    let balloon=document.createElement("img");
+
+    balloon.src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png";
+
+    balloon.className="balloon";
+
+    balloon.style.left=Math.random()*100+"vw";
+
+    balloon.style.width=(50+Math.random()*40)+"px";
+
+    balloon.style.animationDuration=
+    (5+Math.random()*5)+"s";
+
+    balloon.style.animationDelay=
+    Math.random()*3+"s";
+
+    document.body.appendChild(balloon);
+
+}
+
+/* Fireworks */
+
+function createFirework(){
+
+    let fire=document.createElement("div");
+
+    fire.className="firework";
+
+    fire.style.top=Math.random()*80+"vh";
+
+    fire.style.left=Math.random()*100+"vw";
+
+    fire.style.background=
+    `hsl(${Math.random()*360},100%,60%)`;
+
+    document.body.appendChild(fire);
+
+    setTimeout(()=>{
+        fire.remove();
+    },1500);
+
+}
+
+/* Bomb Sound */
+
+let sound=document.getElementById("boomSound");
+
+/* Start Fireworks */
+
+setInterval(()=>{
+
+    createFirework();
+
+    sound.currentTime=0;
+
+    sound.play();
+
+},700);
+
+</script>
 
 </body>
 </html>

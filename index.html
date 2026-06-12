@@ -1,395 +1,217 @@
-<!DOCTYPE html>  <html lang="bn">    <head>    
-<meta charset="UTF-8">    
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>🎂 শুভ জন্মদিন 🎉</title>  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&display=swap" rel="stylesheet">  <style>    *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Hind Siliguri',sans-serif;
-overflow-x:hidden;
-min-height:100vh;
-background:linear-gradient(-45deg,#ff0080,#7928ca,#00c6ff,#00ff99);
-background-size:400% 400%;
-animation:bgMove 10s ease infinite;
-color:white;
-position:relative;
-}
-
-/* Background Animation */
-
-@keyframes bgMove{
-
-0%{    
-    background-position:0% 50%;    
-}    
-
-50%{    
-    background-position:100% 50%;    
-}    
-
-100%{    
-    background-position:0% 50%;    
-}
-
-}
-
-/* Loader */
-
-.loader{
-position:fixed;
-inset:0;
-background:black;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-z-index:99999;
-transition:1s;
-}
-
-.loader h1{
-font-size:30px;
-animation:rgb 2s linear infinite;
-}
-
-.loader p{
-margin-top:10px;
-font-size:20px;
-}
-
-/* Main Container */
-
-.container{
-width:100%;
-max-width:750px;
-margin:auto;
-padding:35px 15px 100px;
-position:relative;
-z-index:5;
-}
-
-/* Premium Card */
-
-.card{
-background:rgba(255,255,255,0.12);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.2);
-border-radius:35px;
-padding:30px;
-text-align:center;
-box-shadow:
-0 0 25px rgba(255,255,255,0.3),
-0 0 50px rgba(255,0,255,0.2);
-}
-
-/* RGB */
-
-@keyframes rgb{
-
-0%{    
-    color:#ff4d4d;    
-}    
-
-25%{    
-    color:#00ffcc;    
-}    
-
-50%{    
-    color:#ffff66;    
-}    
-
-75%{    
-    color:#66ff66;    
-}    
-
-100%{    
-    color:#ff66ff;    
-}
-
-}
-
-/* Title */
-
-.title{
-font-size:35px;
-font-weight:500;
-line-height:55px;
-animation:rgb 3s linear infinite;
-text-shadow:0 0 15px white;
-}
-
-/* Photo */
-
-.photo-box{
-margin-top:25px;
-}
-
-.photo{
-width:240px;
-height:240px;
-border-radius:30px;
-object-fit:cover;
-border:5px solid white;
-
-box-shadow:    
-0 0 20px white,    
-0 0 40px #ff00ff,    
-0 0 70px #00ffff;    
-
-animation:float 4s ease infinite;
-
-}
-
-@keyframes float{
-
-0%{    
-    transform:translateY(0);    
-}    
-
-50%{    
-    transform:translateY(-10px);    
-}    
-
-100%{    
-    transform:translateY(0);    
-}
-
-}
-
-/* Caption */
-
-.caption{
-margin-top:25px;
-font-size:25px;
-line-height:30px;
-font-weight:bold;
-animation:rgb 4s linear infinite;
-}
-
-/* Facebook Button */
-
-.fb-btn{
-display:inline-block;
-margin-top:25px;
-padding:15px 35px;
-border-radius:50px;
-background:white;
-color:#1877f2;
-text-decoration:none;
-font-size:20px;
-font-weight:bold;
-transition:0.4s;
-box-shadow:0 0 20px white;
-}
-
-.fb-btn:hover{
-
-transform:scale(1.08);    
-
-background:#1877f2;    
-
-color:white;
-
-}
-
-/* Video */
-
-.video-box{
-margin-top:35px;
-}
-
-video{
-width:100%;
-border-radius:25px;
-border:4px solid white;
-box-shadow:
-0 0 20px white,
-0 0 40px #ff00ff;
-background:black;
-}
-
-/* Balloon */
-
-.balloon{
-position:fixed;
-bottom:-200px;
-z-index:1;
-animation:fly linear;
-opacity:0.95;
-}
-
-@keyframes fly{
-
-0%{    
-    transform:translateY(0) rotate(0deg);    
-}    
-
-100%{    
-    transform:translateY(-140vh) rotate(360deg);    
-}
-
-}
-
-/* Firework */
-
-.firework{
-position:fixed;
-width:15px;
-height:15px;
-border-radius:50%;
-z-index:2;
-animation:boom 1.5s ease-out forwards;
-}
-
-@keyframes boom{
-
-0%{    
-    transform:scale(0);    
-    opacity:1;    
-}    
-
-100%{    
-    transform:scale(18);    
-    opacity:0;    
-}
-
-}
-
-/* Responsive */
-
-@media(max-width:600px){
-
-.title{
-font-size:40px;
-line-height:60px;
-}
-
-.photo{
-width:190px;
-height:190px;
-}
-
-.caption{
-font-size:15px;
-line-height:28px;
-}
-
-.fb-btn{
-font-size:15px;
-padding:10px 24px;
-}
-
-}
-
-</style>  </head>  <body>  <!-- Loader -->  <div class="loader" id="loader">  <h1>🎉 একটু-অপেক্ষা-করো-দাদা</h1>  <p>লোড হচ্ছে...</p>  </div>  <!-- Main -->  <div class="container">  <div class="card">  <div class="title">
-🎂শুভ জন্মদিন🎉
-
-</div>  <div class="photo-box">  <img src="osman.jpg" class="photo">  </div>  <div class="caption">  💖 আসসালামু আলাইকুম ওসমান দাদা 😊 আশা করি ভালো আছেন শুনতে পেলাম আজ নাকি আপনার শুভ জন্মদিন🕯️ Happy birthday Osman🎈  <br> আজকে আপনার সব ইচ্ছা পূরণ হোক… কিন্তু কাল থেকে আবার আগের মতোই জীবন হোক Just Fun....bro😁 কি আর বলবো দাদা আপনি এখনও সেই পুরোনো ভার্সনেই আছেন😂 দাদা সময় না থাকায় সুন্দর কিছু করতে পারলাম না😔..! দাদা ভালোবাসা আর সফলতায় ভরে উঠুক আপনার জিবন দুয়া ও ভালোবাসা থাকবে আপনার জন্য,,,,, ✨
-
-</div>  <a href="https://www.facebook.com/share/18xQ1zkKxu/" target="_blank" class="fb-btn">  📘 ফেসবুক প্রোফাইল দেখুন  </a>  <div class="video-box">  <video controls autoplay>  <source src="funny.mp4" type="video/mp4">  </video>  </div>  </div>  </div>  <!-- Bomb Sound -->  <audio id="boomSound">  <source src="https://www.soundjay.com/explosion/explosion-01.mp3" type="audio/mpeg">  </audio>  <!-- Script -->  <script>
-
-/* Loader */
-
-setTimeout(()=>{
-
-document.getElementById("loader").style.opacity="0";
-
-setTimeout(()=>{
-
-document.getElementById("loader").style.display="none";
-
-},1000);
-
-},3000);
-
-/* Balloon Create */
-
-function createBalloon(){
-
-let balloon=document.createElement("img");    
-
-balloon.src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png";    
-
-balloon.className="balloon";    
-
-balloon.style.left=Math.random()*100+"vw";    
-
-balloon.style.width=(50+Math.random()*40)+"px";    
-
-balloon.style.animationDuration=    
-(5+Math.random()*5)+"s";    
-
-document.body.appendChild(balloon);    
-
-setTimeout(()=>{    
-
-    balloon.remove();    
-
-},10000);
-
-}
-
-/* Non Stop Balloons */
-
-setInterval(createBalloon,400);
-
-/* Firework Create */
-
-function createFirework(){
-
-let fire=document.createElement("div");    
-
-fire.className="firework";    
-
-fire.style.top=Math.random()*80+"vh";    
-
-fire.style.left=Math.random()*100+"vw";    
-
-fire.style.background=    
-`hsl(${Math.random()*360},100%,60%)`;    
-
-document.body.appendChild(fire);    
-
-setTimeout(()=>{    
-
-    fire.remove();    
-
-},1500);
-
-}
-
-/* Firework Loop */
-
-setInterval(createFirework,700);
-
-/* Sound Fix */
-
-let sound=document.getElementById("boomSound");
-
-/* Mobile Browser Allow */
-
-document.body.addEventListener("click",()=>{
-
-sound.play();    
-
-sound.pause();    
-
-sound.currentTime=0;
-
-});
-
-/* Bomb Sound */
-
-setInterval(()=>{
-
-sound.currentTime=0;    
-
-sound.play();
-
-},700);
-
-</script>  </body>
-
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMM Deposit Gateway</title>
+    <!-- Tailwind CSS for sleek styling -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome for Copy icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .bkash-bg { background-color: #e2136e; }
+        .nagad-bg { background-color: #de1e26; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans min-h-screen flex items-center justify-center p-4">
+
+    <!-- STEP 1: Amount & Method Selection UI -->
+    <div id="step-selection" class="w-full max-w-md bg-white rounded-2xl shadow-xl p-6 transition-all duration-300">
+        <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Add Deposit Balance</h2>
+        
+        <div class="mb-5">
+            <label class="block text-gray-700 font-semibold mb-2">Select Payment Method</label>
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="selectMethod('bKash')" type="button" class="border-2 border-gray-200 hover:border-[#e2136e] rounded-xl p-3 flex flex-col items-center justify-center transition focus:outline-none focus:border-[#e2136e]">
+                    <span class="text-xl font-bold text-[#e2136e]">bKash</span>
+                </button>
+                <button onclick="selectMethod('Nagad')" type="button" class="border-2 border-gray-200 hover:border-[#de1e26] rounded-xl p-3 flex flex-col items-center justify-center transition focus:outline-none focus:border-[#de1e26]">
+                    <span class="text-xl font-bold text-[#de1e26]">Nagad</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label for="amount-input" class="block text-gray-700 font-semibold mb-2">Deposit Amount (BDT)</label>
+            <input type="number" id="amount-input" placeholder="Enter amount, e.g. 500" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none text-lg">
+        </div>
+
+        <button onclick="generatePaymentLink()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow-md transition transform active:scale-95">
+            Proceed to Pay
+        </button>
+    </div>
+
+    <!-- STEP 2: Payment Page UI (Matches Image 20026.jpg) -->
+    <div id="step-payment" class="w-full max-w-md bg-white rounded-2xl shadow-xl p-4 hidden transition-all duration-300">
+        <!-- Amount Header Box -->
+        <div class="w-full bg-white border border-gray-100 rounded-xl py-3 px-4 shadow-sm mb-4">
+            <span class="text-2xl font-bold text-gray-700">৳ <span id="display-amount">0</span></span>
+        </div>
+
+        <!-- Main Instruction Box (Dynamic Color) -->
+        <div id="payment-card" class="rounded-2xl p-5 text-white shadow-inner mb-4 transition-all duration-300">
+            <h3 class="text-center text-xl font-bold mb-5">ট্রানজেকশন আইডি দিন</h3>
+            
+            <!-- TrxID Input -->
+            <div class="mb-6">
+                <input type="text" id="trx-id-input" placeholder="ট্রানজেকশন আইডি দিন" class="w-full bg-white text-gray-800 placeholder-gray-400 font-medium px-4 py-3 rounded-xl border-none focus:ring-4 focus:ring-yellow-400 focus:outline-none text-center">
+            </div>
+
+            <!-- Steps List -->
+            <ul class="space-y-4 text-sm md:text-base leading-relaxed border-t border-white/20 pt-4">
+                <li class="flex items-start gap-2">
+                    <span class="mt-1">•</span>
+                    <span><strong id="ussd-code">*247#</strong> ডায়াল করে আপনার <span class="method-name">bKash</span> মোবাইল মেনুতে যান অথবা <span class="method-name">bKash</span> অ্যাপে যান।</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="mt-1">•</span>
+                    <span><strong class="text-yellow-300">"Send Money"</strong> -এ ক্লিক করুন।</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="mt-1">•</span>
+                    <div class="w-full">
+                        <span>প্রাপক নম্বর হিসেবে এই নম্বরটি লিখুন:</span>
+                        <div class="mt-1 flex items-center gap-2">
+                            <span id="target-number" class="font-bold text-yellow-300 text-lg tracking-wider">01876596111</span>
+                            <button onclick="copyNumber()" class="bg-black/30 hover:bg-black/50 text-xs px-3 py-1 rounded-md flex items-center gap-1 transition">
+                                <i class="fa-regular fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="mt-1">•</span>
+                    <span>টাকার পরিমাণ: <strong class="text-yellow-300">৳ <span class="display-amount-inner">0</span></strong></span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="mt-1">•</span>
+                    <span>নিশ্চিত করতে এখন আপনার <span class="method-name">bKash</span> মোবাইল মেনু পিন লিখুন।</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="mt-1">•</span>
+                    <span>সবকিছু ঠিক থাকলে, আপনি <span class="method-name">bKash</span> থেকে একটি নিশ্চিতকরণ বার্তা পাবেন।</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="mt-1">•</span>
+                    <span>এখন উপরের বক্সে আপনার <strong class="text-yellow-300">Transaction ID</strong> দিন এবং নিচের <strong class="text-yellow-300">VERIFY</strong> বাটনে ক্লিক করুন।</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Verify Button -->
+        <button onclick="verifyPayment()" class="w-full bg-[#bd0414] hover:bg-[#a10310] text-white font-extrabold text-lg py-4 rounded-xl shadow-lg transition transform active:scale-95 uppercase tracking-wide">
+            Verify
+        </button>
+    </div>
+
+    <!-- JavaScript Processing -->
+    <script>
+        // CONFIGURATION: Apnar details eikhane change korun
+        const CONFIG = {
+            botToken: 'YOUR_BOT_TOKEN',      // Apnar Telegram Bot Token
+            adminChatId: '8627605535',       // Apnar Admin Telegram Chat ID
+            bKashNumber: '01876596111',      // bKash Send Money Number
+            NagadNumber: '01874071821'       // Nagad Send Money Number
+        };
+
+        let selectedMethod = '';
+        let currentAmount = 0;
+
+        function selectMethod(method) {
+            selectedMethod = method;
+            // Highlighting style implementation could go here
+            alert(method + " selected!");
+        }
+
+        function generatePaymentLink() {
+            const amountInput = document.getElementById('amount-input').value;
+            
+            if (!selectedMethod) {
+                alert('Please select a payment method (bKash or Nagad)!');
+                return;
+            }
+            if (!amountInput || amountInput <= 0) {
+                alert('Please enter a valid deposit amount!');
+                return;
+            }
+
+            currentAmount = amountInput;
+
+            // Update UI Fields based on choice
+            document.getElementById('display-amount').innerText = currentAmount;
+            document.querySelectorAll('.display-amount-inner').forEach(el => el.innerText = currentAmount);
+            document.querySelectorAll('.method-name').forEach(el => el.innerText = selectedMethod);
+
+            const card = document.getElementById('payment-card');
+            const ussd = document.getElementById('ussd-code');
+            const numDisplay = document.getElementById('target-number');
+
+            if (selectedMethod === 'bKash') {
+                card.className = "rounded-2xl p-5 text-white shadow-inner mb-4 transition-all duration-300 bkash-bg";
+                ussd.innerText = "*247#";
+                numDisplay.innerText = CONFIG.bKashNumber;
+            } else if (selectedMethod === 'Nagad') {
+                card.className = "rounded-2xl p-5 text-white shadow-inner mb-4 transition-all duration-300 nagad-bg";
+                ussd.innerText = "*167#";
+                numDisplay.innerText = CONFIG.NagadNumber;
+            }
+
+            // Screen Switch Effect
+            document.getElementById('step-selection').classList.add('hidden');
+            document.getElementById('step-payment').classList.remove('hidden');
+        }
+
+        function copyNumber() {
+            const num = document.getElementById('target-number').innerText;
+            navigator.clipboard.writeText(num).then(() => {
+                alert('Number copied to clipboard: ' + num);
+            });
+        }
+
+        function verifyPayment() {
+            const trxId = document.getElementById('trx-id-input').value.trim();
+
+            if (!trxId) {
+                alert('অনুগ্রহ করে ট্রানজেকশন আইডি (Transaction ID) প্রদান করুন।');
+                return;
+            }
+
+            // Telegram API text creation
+            const message = `🔔 *New Deposit Request!*\n\n` +
+                            `👤 *User:* SMM Client\n` +
+                            `💵 *Amount:* BDT ${currentAmount}\n` +
+                            `💳 *Method:* ${selectedMethod}\n` +
+                            `🔑 *TrxID:* \`${trxId}\`\n\n` +
+                            `Please verify manually and add balance to the user panel.`;
+
+            // Sending data to Bot Owner
+            const url = `https://api.telegram.org/bot${CONFIG.botToken}/sendMessage`;
+            
+            fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: CONFIG.adminChatId,
+                    text: message,
+                    parse_mode: 'Markdown'
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.ok) {
+                    alert('আপনার তথ্য সাবমিট হয়েছে! এডমিন যাচাই করে ব্যালেন্স যোগ করে দেবে।');
+                    // Clean fields or redirect
+                    location.reload();
+                } else {
+                    alert('Error sending to Telegram. Check Configuration!');
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Network connection error!');
+            });
+        }
+    </script>
+</body>
+                    </html>
+    
